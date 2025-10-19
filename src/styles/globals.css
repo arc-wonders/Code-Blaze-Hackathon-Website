@@ -1,0 +1,351 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@400;500;600;700&family=Saira+Condensed:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap');
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --font-size: 16px;
+  
+  /* Code Blaze Theme Colors */
+  --blaze-black: #0B0B0F;
+  --blaze-card: #15161A;
+  --blaze-lava: #FF6A00;
+  --blaze-glow: #FFA559;
+  --blaze-ember: #FF3B2F;
+  --blaze-light: #F8F1E7;
+  --blaze-muted: #9AA0A6;
+  
+  --background: var(--blaze-black);
+  --foreground: var(--blaze-light);
+  --card: var(--blaze-card);
+  --card-foreground: var(--blaze-light);
+  --popover: var(--blaze-card);
+  --popover-foreground: var(--blaze-light);
+  --primary: var(--blaze-lava);
+  --primary-foreground: var(--blaze-light);
+  --secondary: var(--blaze-card);
+  --secondary-foreground: var(--blaze-light);
+  --muted: var(--blaze-muted);
+  --muted-foreground: var(--blaze-muted);
+  --accent: var(--blaze-lava);
+  --accent-foreground: var(--blaze-light);
+  --destructive: var(--blaze-ember);
+  --destructive-foreground: var(--blaze-light);
+  --border: rgba(255, 106, 0, 0.2);
+  --input: transparent;
+  --input-background: var(--blaze-card);
+  --switch-background: var(--blaze-muted);
+  --font-weight-medium: 500;
+  --font-weight-normal: 400;
+  --ring: var(--blaze-lava);
+  --chart-1: var(--blaze-lava);
+  --chart-2: var(--blaze-glow);
+  --chart-3: var(--blaze-ember);
+  --chart-4: var(--blaze-muted);
+  --chart-5: var(--blaze-light);
+  --radius: 0.5rem;
+  --sidebar: var(--blaze-card);
+  --sidebar-foreground: var(--blaze-light);
+  --sidebar-primary: var(--blaze-lava);
+  --sidebar-primary-foreground: var(--blaze-light);
+  --sidebar-accent: var(--blaze-card);
+  --sidebar-accent-foreground: var(--blaze-light);
+  --sidebar-border: rgba(255, 106, 0, 0.2);
+  --sidebar-ring: var(--blaze-lava);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-input-background: var(--input-background);
+  --color-switch-background: var(--switch-background);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  
+  /* Custom colors for Code Blaze */
+  --color-blaze-black: var(--blaze-black);
+  --color-blaze-card: var(--blaze-card);
+  --color-blaze-lava: var(--blaze-lava);
+  --color-blaze-glow: var(--blaze-glow);
+  --color-blaze-ember: var(--blaze-ember);
+  --color-blaze-light: var(--blaze-light);
+  --color-blaze-muted: var(--blaze-muted);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/**
+ * Base typography. This is not applied to elements which have an ancestor with a Tailwind text class.
+ */
+@layer base {
+  :where(:not(:has([class*=" text-"]), :not(:has([class^="text-"])))) {
+    h1 {
+      font-size: var(--text-2xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h2 {
+      font-size: var(--text-xl);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h3 {
+      font-size: var(--text-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    h4 {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    p {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+
+    label {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    button {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-medium);
+      line-height: 1.5;
+    }
+
+    input {
+      font-size: var(--text-base);
+      font-weight: var(--font-weight-normal);
+      line-height: 1.5;
+    }
+  }
+}
+
+html {
+  font-size: var(--font-size);
+}
+
+/* Custom animations */
+@keyframes lava-pulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes ember-float {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) translateX(20px);
+    opacity: 0;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+@keyframes crack-glow {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
+
+@keyframes lightning-strike {
+  0%, 100% {
+    opacity: 0;
+  }
+  10%, 30%, 50% {
+    opacity: 1;
+  }
+  20%, 40%, 60% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes thunder-flash {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(1.2);
+  }
+}
+
+@keyframes fire-flicker {
+  0%, 100% {
+    transform: scaleY(1) scaleX(1);
+    opacity: 1;
+  }
+  25% {
+    transform: scaleY(1.1) scaleX(0.95);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scaleY(0.95) scaleX(1.05);
+    opacity: 1;
+  }
+  75% {
+    transform: scaleY(1.05) scaleX(0.98);
+    opacity: 0.95;
+  }
+}
+
+@keyframes spark-burst {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+.animate-lava-pulse {
+  animation: lava-pulse 3s ease-in-out infinite;
+}
+
+.animate-ember-float {
+  animation: ember-float 8s linear infinite;
+}
+
+.animate-shimmer {
+  animation: shimmer 3s linear infinite;
+}
+
+.animate-lightning-strike {
+  animation: lightning-strike 4s ease-in-out infinite;
+}
+
+.animate-thunder-flash {
+  animation: thunder-flash 3s ease-in-out infinite;
+}
+
+.animate-fire-flicker {
+  animation: fire-flicker 2s ease-in-out infinite;
+}
+
+.animate-spark-burst {
+  animation: spark-burst 1s ease-out forwards;
+}
+
+/* Prefers reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  
+  .animate-lava-pulse,
+  .animate-ember-float,
+  .animate-shimmer,
+  .animate-lightning-strike,
+  .animate-thunder-flash,
+  .animate-fire-flicker,
+  .animate-spark-burst {
+    animation: none;
+  }
+}
+
+/* Noise texture */
+.noise-texture::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.05'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Devfolio button iframe support */
+.apply-button {
+  pointer-events: auto !important;
+}
+
+.apply-button iframe {
+  pointer-events: auto !important;
+  display: block !important;
+  border: none !important;
+}
+
+.apply-button * {
+  pointer-events: auto !important;
+}

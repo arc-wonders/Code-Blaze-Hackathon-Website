@@ -1,0 +1,53 @@
+# --- OS junk ---
+.DS_Store
+Thumbs.db
+
+# --- Node / package managers ---
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+.pnp.cjs
+.pnp.loader.mjs
+.pnp.data.json
+
+# --- Vercel local project files ---
+.vercel/
+
+# --- Build outputs (don’t commit; Vercel builds these) ---
+dist/
+build/
+.out/
+.next/
+.nuxt/
+.svelte-kit/
+.esbuild/
+.turbo/
+.vercel/output/
+
+# --- Caches ---
+.cache/
+.parcel-cache/
+.vite/
+.eslintcache
+.stylelintcache
+coverage/
+
+# --- Env & secrets (set these in Vercel Project Settings → Environment Variables) ---
+.env
+.env.*
+!.env.example
+*.local
+
+# --- TypeScript build artifacts ---
+*.tsbuildinfo
+
+# --- IDE / editors ---
+.vscode/
+.idea/
+*.swp
+
+# --- Misc ---
+*.log
