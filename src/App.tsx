@@ -143,7 +143,7 @@ export default function App() {
             <div 
               className="apply-button" 
               data-hackathon-slug="codeblaze" 
-              data-button-theme="dark"
+              data-button-theme="light"
             ></div>
           </div>
 
